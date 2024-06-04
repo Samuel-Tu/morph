@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "moduleResolution": "Bundler",
+    "noUnusedLocals": true,
+  },
+  "include": [
+    "packages/core/index.ts",
+    "packages/hooks/**/*.ts",
+    "packages/utils/**/*.ts",
+    "packages/components/index.ts",
+    "packages/components/**/*.ts",
+    "packages/components/**/*.vue",
+  ]
+}

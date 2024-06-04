@@ -1,10 +1,16 @@
-@import "./reset.scss";
+@import "./reset.css";
 
 :root {
   /* colors */
   --m-color-white: #ffffff;
   --m-color-black: #000000;
-  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
   --m-bg-color: #ffffff;
   --m-bg-color-page: #f2f3f5;
   --m-bg-color-overlay: #ffffff;
@@ -28,11 +34,13 @@
   --m-fill-color-blank: #ffffff;
 
   @each $val, $color in var(--colors) {
-    --m-color-#{$val}: #{$color};
+    --m-color-$(val): $(color);
+
     @for $i from 3 to 9 {
-      --m-color-#{$val}-light-#{$i}: mix(#fff, #{$color}, #{$i * 10%});
+      --m-color-$(val)-light-$(i): mix(#fff, $(color), 0$. (i));
     }
-    --m-color-#{$val}-dark-2: mix(#000, #{$color}, 20%);
+
+    --m-color-$(val)-dark-2: min(#000, $(color), 0.2);
   }
 
   /* border */
@@ -52,8 +60,9 @@
   --m-font-size-base: 14px;
   --m-font-size-small: 13px;
   --m-font-size-extra-small: 12px;
-  --m-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-    "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+  --m-font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial,
+    sans-serif;
   --m-font-weight-primary: 500;
 
   /*disabled*/
