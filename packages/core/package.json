@@ -1,5 +1,5 @@
 {
-  "name": "morph",
+  "name": "samuel-morph",
   "version": "1.0.0",
   "description": "Components library by Vue3 + TS",
   "type": "module",
@@ -29,7 +29,7 @@
     "move-style": "move-file dist/es/index.css dist/index.css"
   },
   "keywords": [],
-  "author": "",
+  "author": "Samuel",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
