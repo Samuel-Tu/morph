@@ -3,6 +3,7 @@ import type { CollapseItemProps } from "./types";
 import { COLLAPSE_CTX_KEY } from "./constants";
 import { inject, computed } from "vue";
 import MIcon from "../Icon/Icon.vue";
+import transitionEvents from "./transitionEvents";
 
 defineOptions({
   name: "MCollapseItem",
@@ -39,9 +40,15 @@ function handleClick() {
           {{ title }}
         </slot>
       </span>
-      <m-icon icon="angle-right" />
+      <m-icon
+        icon="angle-right"
+        class="header-angle"
+      />
     </div>
-    <transition name="slide">
+    <transition
+      name="slide"
+      v-on="transitionEvents"
+    >
       <div
         class="m-collapse-item__wrapper"
         v-show="isActive"
