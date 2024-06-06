@@ -73,7 +73,7 @@ const C = Symbol(
   for (const [t, i] of n)
     l[t] = i;
   return l;
-}, Y = /* @__PURE__ */ $(X, [["__scopeId", "data-v-7e378f48"]]), j = { class: "m-button-group" }, q = /* @__PURE__ */ z({
+}, Y = /* @__PURE__ */ $(X, [["__scopeId", "data-v-c85d797a"]]), j = { class: "m-button-group" }, q = /* @__PURE__ */ z({
   name: "MButtonGroup",
   __name: "ButtonGroup",
   props: {
@@ -94,8 +94,9 @@ const C = Symbol(
       m(l.$slots, "default", {}, void 0, !0)
     ]));
   }
-}), A = /* @__PURE__ */ $(q, [["__scopeId", "data-v-6cb18ea1"]]), Q = T(Y), W = T(A);
+}), A = /* @__PURE__ */ $(q, [["__scopeId", "data-v-e0351486"]]), Q = T(Y), W = T(A);
 export {
   Q as M,
+  $ as _,
   W as a
 };

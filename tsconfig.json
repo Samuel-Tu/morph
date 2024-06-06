@@ -8,5 +8,5 @@
     "moduleResolution": "Bundler",
     "noUnusedLocals": true,
   },
-  "include": ["packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue"]
+  "include": ["packages/**/*.ts", "packages/**/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue"]
 }

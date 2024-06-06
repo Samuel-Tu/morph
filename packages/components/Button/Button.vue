@@ -3,7 +3,7 @@ import MIcon from "../Icon/Icon.vue";
 import { ButtonProps, ButtonEmits, ButtonInstance } from "./types";
 import { ref, computed, inject } from "vue";
 import { throttle } from "lodash-es";
-import { BUTTON_GROUP_CTX_KEY } from './contants'
+import { BUTTON_GROUP_CTX_KEY } from './constants'
 
 defineOptions({
   name: "MButton",

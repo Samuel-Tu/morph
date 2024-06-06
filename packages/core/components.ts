@@ -1,4 +1,16 @@
-import { MButton, MIcon, MButtonGroup } from "@morph/components";
+import {
+  MButton,
+  MIcon,
+  MButtonGroup,
+  MCollapse,
+  MCollapseItem,
+} from "@morph/components";
 import type { Plugin } from "vue";
 
-export default [MButton, MIcon, MButtonGroup] as Plugin[];
+export default [
+  MButton,
+  MIcon,
+  MButtonGroup,
+  MCollapse,
+  MCollapseItem,
+] as Plugin[];

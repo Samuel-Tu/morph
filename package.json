@@ -10,7 +10,7 @@
     "docs:build": "pnpm --filter @morph/docs build",
     "storybook": "pnpm --filter @morph/play storybook",
     "test": "pnpm --filter @morph/components test",
-    "build": "pnpm --filter morph build"
+    "build": "pnpm --filter samuel-morph build"
   },
   "keywords": [],
   "author": "",
