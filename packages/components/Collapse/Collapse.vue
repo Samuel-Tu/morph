@@ -2,9 +2,12 @@
 import type { CollapseProps, CollapseEmits, CollapseItemName } from "./types";
 import { provide, ref, watch, watchEffect } from "vue";
 import { COLLAPSE_CTX_KEY } from "./constants";
+import { debugWarn } from "@morph/utils";
+
+const COMP_NAME = "MCollapse" as const;
 
 defineOptions({
-  name: "MCollapse",
+  name: COMP_NAME,
 });
 
 const props = defineProps<CollapseProps>();
@@ -13,7 +16,7 @@ const activeNames = ref<CollapseItemName[]>(props.modelValue);
 
 watchEffect(() => {
   if (props.accordion && activeNames.value.length > 1) {
-    console.warn("accordion mode should only have one active item");
+    debugWarn(COMP_NAME, "accordion mode should only have one active item");
   }
 });
 
