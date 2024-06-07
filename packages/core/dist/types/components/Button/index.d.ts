@@ -1,10 +1,10 @@
 export declare const MButton: {
     new (...args: any[]): import('vue').CreateComponentPublicInstance<Readonly<import('vue').ExtractPropTypes<{
-        icon: {
-            type: import('vue').PropType<string>;
-        };
         size: {
             type: import('vue').PropType<import('./types').ButtonSize>;
+        };
+        icon: {
+            type: import('vue').PropType<string>;
         };
         type: {
             type: import('vue').PropType<import('./types').ButtonType>;
@@ -56,11 +56,11 @@ export declare const MButton: {
     }, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
         click: (val: MouseEvent) => void;
     }, import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & Readonly<import('vue').ExtractPropTypes<{
-        icon: {
-            type: import('vue').PropType<string>;
-        };
         size: {
             type: import('vue').PropType<import('./types').ButtonSize>;
+        };
+        icon: {
+            type: import('vue').PropType<string>;
         };
         type: {
             type: import('vue').PropType<import('./types').ButtonType>;
@@ -117,11 +117,11 @@ export declare const MButton: {
         M: {};
         Defaults: {};
     }, Readonly<import('vue').ExtractPropTypes<{
-        icon: {
-            type: import('vue').PropType<string>;
-        };
         size: {
             type: import('vue').PropType<import('./types').ButtonSize>;
+        };
+        icon: {
+            type: import('vue').PropType<string>;
         };
         type: {
             type: import('vue').PropType<import('./types').ButtonType>;
@@ -180,11 +180,11 @@ export declare const MButton: {
     __isTeleport?: undefined;
     __isSuspense?: undefined;
 } & import('vue').ComponentOptionsBase<Readonly<import('vue').ExtractPropTypes<{
-    icon: {
-        type: import('vue').PropType<string>;
-    };
     size: {
         type: import('vue').PropType<import('./types').ButtonSize>;
+    };
+    icon: {
+        type: import('vue').PropType<string>;
     };
     type: {
         type: import('vue').PropType<import('./types').ButtonType>;

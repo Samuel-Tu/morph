@@ -1,0 +1,25 @@
+.m-icon[data-v-e0c83d2b] {
+  --color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--color);
+  font-size: inherit;
+}
+.m-icon--primary[data-v-e0c83d2b] {
+    --color: var(--m-color-primary);
+}
+.m-icon--info[data-v-e0c83d2b] {
+    --color: var(--m-color-info);
+}
+.m-icon--success[data-v-e0c83d2b] {
+    --color: var(--m-color-success);
+}
+.m-icon--warning[data-v-e0c83d2b] {
+    --color: var(--m-color-warning);
+}
+.m-icon--danger[data-v-e0c83d2b] {
+    --color: var(--m-color-danger);
+}

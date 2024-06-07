@@ -4,7 +4,7 @@ import {
   MButtonGroup,
   MCollapse,
   MCollapseItem,
-} from "@morph/components";
+} from "@samuel-morph/components";
 import type { Plugin } from "vue";
 
 export default [

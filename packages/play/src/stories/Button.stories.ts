@@ -1,7 +1,7 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/vue3";
 import { fn, within, userEvent, expect } from "@storybook/test";
 
-import { MButton, MButtonGroup } from "morph";
+import { MButton, MButtonGroup } from "samuel-morph";
 
 type Story = StoryObj<typeof MButton> & { argTypes?: ArgTypes };
 

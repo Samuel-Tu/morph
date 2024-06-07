@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/vue3";
-import "morph/dist/index.css";
+import "samuel-morph/dist/umd/index.css";
 
 const preview: Preview = {
   parameters: {

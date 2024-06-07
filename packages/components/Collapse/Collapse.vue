@@ -2,7 +2,7 @@
 import type { CollapseProps, CollapseEmits, CollapseItemName } from "./types";
 import { provide, ref, watch, watchEffect } from "vue";
 import { COLLAPSE_CTX_KEY } from "./constants";
-import { debugWarn } from "@morph/utils";
+import { debugWarn } from "@samuel-morph/utils";
 
 const COMP_NAME = "MCollapse" as const;
 

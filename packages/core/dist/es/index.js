@@ -1,23 +1,22 @@
-import { m as o } from "./utils-C1ZxNSfk.js";
-import { library as a } from "@fortawesome/fontawesome-svg-core";
-import { fas as r } from "@fortawesome/free-solid-svg-icons";
-import { M as t, a as m } from "./Button-Dfi15w6v.js";
-import { M as s } from "./Icon-D3n01b7X.js";
-import { M as p, a as l } from "./Collapse-lSbJL3VK.js";
-const e = [
-  t,
-  s,
-  m,
-  p,
-  l
-];
-a.add(r);
-const d = o(e);
+import { m as _ } from "./utils-452ulj7c.js";
+import { library as n } from "@fortawesome/fontawesome-svg-core";
+import { fas as o } from "@fortawesome/free-solid-svg-icons";
+import { M as t, a } from "./Button-BmaOW2Ds.js";
+import { a as s } from "./Icon-CRqHfNQB.js";
+import { M as r, a as e } from "./Collapse-BZmq5p5v.js";
+const i = [t, s, a, r, e];
+!function() {
+  {
+    const _2 = "\n______________________________________________________________________________________________________________________\n\n\n   ######     ###    ##     ## ##     ## ######## ##               ##     ##  #######  ########  ########  ##     ##\n  ##    ##   ## ##   ###   ### ##     ## ##       ##               ###   ### ##     ## ##     ## ##     ## ##     ##\n  ##        ##   ##  #### #### ##     ## ##       ##               #### #### ##     ## ##     ## ##     ## ##     ##\n   ######  ##     ## ## ### ## ##     ## ######   ##       ####### ## ### ## ##     ## ########  ########  #########\n        ## ######### ##     ## ##     ## ##       ##               ##     ## ##     ## ##   ##   ##        ##     ##\n  ##    ## ##     ## ##     ## ##     ## ##       ##               ##     ## ##     ## ##    ##  ##        ##     ##\n   ######  ##     ## ##     ##  #######  ######## ########         ##     ##  #######  ##     ## ##        ##     ##\n\n\n______________________________________________________________________________________________________________________\n\n                                                        author: Samuel\n", n2 = "\nbackground: linear-gradient(135deg, orange 60%, cyan);\nbackground-clip: text;\ncolor: transparent;\nfont-size: 16px;\nline-height: 1;\nfont-family: monospace;\nfont-weight: 600;\n";
+    console.info(`%c${_2}`, n2);
+  }
+}(), n.add(o);
+const m = _(i);
 export {
   t as MButton,
-  m as MButtonGroup,
-  p as MCollapse,
-  l as MCollapseItem,
+  a as MButtonGroup,
+  r as MCollapse,
+  e as MCollapseItem,
   s as MIcon,
-  d as default
+  m as default
 };

@@ -1,0 +1,255 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  /* colors */
+  --m-color-white: #ffffff;
+  --m-color-black: #000000;
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+  --m-bg-color: #ffffff;
+  --m-bg-color-page: #f2f3f5;
+  --m-bg-color-overlay: #ffffff;
+  --m-text-color-primary: #303133;
+  --m-text-color-regular: #606266;
+  --m-text-color-secondary: #909399;
+  --m-text-color-placeholder: #a8abb2;
+  --m-text-color-disabled: #c0c4cc;
+  --m-border-color: #dcdfe6;
+  --m-border-color-light: #e4e7ed;
+  --m-border-color-lighter: #ebeef5;
+  --m-border-color-extra-light: #f2f6fc;
+  --m-border-color-dark: #d4d7de;
+  --m-border-color-darker: #cdd0d6;
+  --m-fill-color: #f0f2f5;
+  --m-fill-color-light: #f5f7fa;
+  --m-fill-color-lighter: #fafafa;
+  --m-fill-color-extra-light: #fafcff;
+  --m-fill-color-dark: #ebedf0;
+  --m-fill-color-darker: #e6e8eb;
+  --m-fill-color-blank: #ffffff;
+    --m-color-primary: #409eff
+;
+      --m-color-primary-light-3: #A0CFFF;
+      --m-color-primary-light-4: #A0CFFF;
+      --m-color-primary-light-5: #A0CFFF;
+      --m-color-primary-light-6: #A0CFFF;
+      --m-color-primary-light-7: #A0CFFF;
+      --m-color-primary-light-8: #A0CFFF;
+      --m-color-primary-light-9: #A0CFFF;
+
+    --m-color-primary-dark-2: min(#000, #409eff, 0.2)
+;
+    --m-color-success: #67c23a
+;
+      --m-color-success-light-3: #B3E19D;
+      --m-color-success-light-4: #B3E19D;
+      --m-color-success-light-5: #B3E19D;
+      --m-color-success-light-6: #B3E19D;
+      --m-color-success-light-7: #B3E19D;
+      --m-color-success-light-8: #B3E19D;
+      --m-color-success-light-9: #B3E19D;
+
+    --m-color-success-dark-2: min(#000, #67c23a, 0.2)
+;
+    --m-color-warning: #e6a23c
+;
+      --m-color-warning-light-3: #F3D19E;
+      --m-color-warning-light-4: #F3D19E;
+      --m-color-warning-light-5: #F3D19E;
+      --m-color-warning-light-6: #F3D19E;
+      --m-color-warning-light-7: #F3D19E;
+      --m-color-warning-light-8: #F3D19E;
+      --m-color-warning-light-9: #F3D19E;
+
+    --m-color-warning-dark-2: min(#000, #e6a23c, 0.2)
+;
+    --m-color-danger: #f56c6c
+;
+      --m-color-danger-light-3: #FAB6B6;
+      --m-color-danger-light-4: #FAB6B6;
+      --m-color-danger-light-5: #FAB6B6;
+      --m-color-danger-light-6: #FAB6B6;
+      --m-color-danger-light-7: #FAB6B6;
+      --m-color-danger-light-8: #FAB6B6;
+      --m-color-danger-light-9: #FAB6B6;
+
+    --m-color-danger-dark-2: min(#000, #f56c6c, 0.2)
+;
+    --m-color-info: #909399
+;
+      --m-color-info-light-3: #C8C9CC;
+      --m-color-info-light-4: #C8C9CC;
+      --m-color-info-light-5: #C8C9CC;
+      --m-color-info-light-6: #C8C9CC;
+      --m-color-info-light-7: #C8C9CC;
+      --m-color-info-light-8: #C8C9CC;
+      --m-color-info-light-9: #C8C9CC;
+
+    --m-color-info-dark-2: min(#000, #909399, 0.2)
+;
+
+  /* border */
+  --m-border-width: 1px;
+  --m-border-style: solid;
+  --m-border-color-hover: var(--m-text-color-disabled);
+  --m-border: var(--m-border-width) var(--m-border-style) var(--m-border-color);
+  --m-border-radius-base: 4px;
+  --m-border-radius-small: 2px;
+  --m-border-radius-round: 20px;
+  --m-border-radius-circle: 100%;
+
+  /*font*/
+  --m-font-size-extra-large: 20px;
+  --m-font-size-large: 18px;
+  --m-font-size-medium: 16px;
+  --m-font-size-base: 14px;
+  --m-font-size-small: 13px;
+  --m-font-size-extra-small: 12px;
+  --m-font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial,
+    sans-serif;
+  --m-font-weight-primary: 500;
+
+  /*disabled*/
+  --m-disabled-bg-color: var(--m-fill-color-light);
+  --m-disabled-text-color: var(--m-text-color-placeholder);
+  --m-disabled-border-color: var(--m-border-color-light);
+  /*animation*/
+  --m-transition-duration: 0.4s;
+  --m-transition-duration-fast: 0.2s;
+}

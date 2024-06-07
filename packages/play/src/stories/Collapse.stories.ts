@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { MCollapse, MCollapseItem } from "morph";
+import { MCollapse, MCollapseItem } from "samuel-morph";
 
 type Story = StoryObj<typeof MCollapse>;
 
@@ -11,7 +11,7 @@ const meta: Meta<typeof MCollapse> = {
 };
 
 export const Default: Story = {
-  render: (args) => ({
+  render: (args: any) => ({
     components: {
       MCollapse,
       MCollapseItem,

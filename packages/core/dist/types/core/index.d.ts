@@ -1,4 +1,4 @@
 
 declare const installer: import('vue').Plugin;
-export * from '../components';
+export * from '@samuel-morph/components';
 export default installer;

@@ -1,6 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
+  <m-button
+    type="danger"
+    size="default"
+    icon="search"
+  ></m-button>
   <m-collapse
     accordion
     modelValue="['a']"
