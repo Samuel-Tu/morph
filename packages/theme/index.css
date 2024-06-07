@@ -37,10 +37,10 @@
     --m-color-$(val): $(color);
 
     @for $i from 3 to 9 {
-      --m-color-$(val)-light-$(i): mix(#fff, $(color), 0$. (i));
+      --m-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
     }
 
-    --m-color-$(val)-dark-2: min(#000, $(color), 0.2);
+    --m-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }
 
   /* border */

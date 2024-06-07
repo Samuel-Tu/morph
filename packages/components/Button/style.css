@@ -111,7 +111,7 @@
     --m-button-active-border-color: var(--m-color-$(val)-dark-2);
     --m-button-disabled-text-color: var(--m-color-white);
     --m-button-disabled-bg-color: var(--m-color-$(val)-light-5);
-    --m-button-disabled-border-color: var(--m-color-$(val)-light-5);
+    --m-button-disabled-border-color: var(--m-color-$(val)-light-9);
   }
 
   .m-button--$(val).is-plain {

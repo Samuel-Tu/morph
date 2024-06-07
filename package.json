@@ -48,6 +48,7 @@
     "@samuel-morph/utils": "workspace:*",
     "lodash-es": "^4.17.21",
     "samuel-morph": "workspace:*",
+    "vite-plugin-dts": "^3.9.1",
     "vue": "^3.4.27"
   }
 }
