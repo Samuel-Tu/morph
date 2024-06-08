@@ -2,8 +2,8 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
-import { readdirSync } from "fs";
-import { filter, map, delay } from "lodash-es";
+import { readdirSync, readdir } from "fs";
+import { filter, map, delay, defer } from "lodash-es";
 import shell from "shelljs";
 import hooks from "./hooksPlugin";
 import terser from "@rollup/plugin-terser";
@@ -24,12 +24,10 @@ function getDirectoriesSync(basePath: string) {
 const TRY_MOVE_STYLE_DELAY = 800 as const;
 
 function moveStyles() {
-  try {
-    readdirSync("./dist/umd/index.css.gz");
-    shell.cp("./dist/umd/index.css", "./dist/index.css");
-  } catch (_) {
-    delay(moveStyles, TRY_MOVE_STYLE_DELAY);
-  }
+  readdir("./dist/es/theme", (err) => {
+    if (err) return delay(moveStyles, TRY_MOVE_STYLE_DELAY);
+    defer(() => shell.mv("./dist/es/theme", "./dist"));
+  });
 }
 
 export default defineConfig({

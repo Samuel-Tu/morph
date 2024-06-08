@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
-import { delay } from "lodash-es";
+import { delay, defer } from "lodash-es";
 import { resolve } from "path";
-import { readdirSync } from "fs";
+import { readFile } from "fs";
 
 import shell from "shelljs";
 import vue from "@vitejs/plugin-vue";
@@ -16,12 +16,10 @@ const isDev = process.env.NODE_ENV === "development";
 const isTest = process.env.NODE_ENV === "test";
 
 function moveStyles() {
-  try {
-    readdirSync("./dist/umd/index.css.gz");
-    shell.cp("./dist/umd/index.css", "./dist/index.css");
-  } catch (_) {
-    delay(moveStyles, TRY_MOVE_STYLE_DELAY);
-  }
+  readFile("./dist/umd/index.css.gz", (err) => {
+    if (err) return delay(moveStyles, TRY_MOVE_STYLE_DELAY);
+    defer(() => shell.cp("./dist/umd/index.css", "./dist/index.css"));
+  });
 }
 
 export default defineConfig({

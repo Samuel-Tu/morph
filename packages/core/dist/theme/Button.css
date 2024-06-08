@@ -91,10 +91,6 @@
     background-color: var(--m-button-disabled-bg-color);
     border-color: var(--m-button-disabled-border-color);
 }
-
-/* &.is-disabled.is-plain {
-    border-color: var(--m-button-disabled-border-color);
-  } */
 .m-button [class*="m-icon"][data-v-c85d797a] {
     width: 1em;
     height: 1em;
@@ -118,7 +114,6 @@
     --m-button-text-color: var(--m-color-primary);
     --m-button-bg-color: var(--m-color-primary-light-9);
     --m-button-border-color: var(--m-color-primary-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-primary);
     --m-button-hover-border-color: var(--m-color-primary);
@@ -147,7 +142,6 @@
     --m-button-text-color: var(--m-color-success);
     --m-button-bg-color: var(--m-color-success-light-9);
     --m-button-border-color: var(--m-color-success-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-success);
     --m-button-hover-border-color: var(--m-color-success);
@@ -176,7 +170,6 @@
     --m-button-text-color: var(--m-color-warning);
     --m-button-bg-color: var(--m-color-warning-light-9);
     --m-button-border-color: var(--m-color-warning-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-warning);
     --m-button-hover-border-color: var(--m-color-warning);
@@ -205,7 +198,6 @@
     --m-button-text-color: var(--m-color-info);
     --m-button-bg-color: var(--m-color-info-light-9);
     --m-button-border-color: var(--m-color-info-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-info);
     --m-button-hover-border-color: var(--m-color-info);
@@ -234,7 +226,6 @@
     --m-button-text-color: var(--m-color-danger);
     --m-button-bg-color: var(--m-color-danger-light-9);
     --m-button-border-color: var(--m-color-danger-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-danger);
     --m-button-hover-border-color: var(--m-color-danger);
@@ -409,10 +400,6 @@
     background-color: var(--m-button-disabled-bg-color);
     border-color: var(--m-button-disabled-border-color);
 }
-
-/* &.is-disabled.is-plain {
-    border-color: var(--m-button-disabled-border-color);
-  } */
 .m-button [class*="m-icon"][data-v-e0351486] {
     width: 1em;
     height: 1em;
@@ -436,7 +423,6 @@
     --m-button-text-color: var(--m-color-primary);
     --m-button-bg-color: var(--m-color-primary-light-9);
     --m-button-border-color: var(--m-color-primary-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-primary);
     --m-button-hover-border-color: var(--m-color-primary);
@@ -465,7 +451,6 @@
     --m-button-text-color: var(--m-color-success);
     --m-button-bg-color: var(--m-color-success-light-9);
     --m-button-border-color: var(--m-color-success-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-success);
     --m-button-hover-border-color: var(--m-color-success);
@@ -494,7 +479,6 @@
     --m-button-text-color: var(--m-color-warning);
     --m-button-bg-color: var(--m-color-warning-light-9);
     --m-button-border-color: var(--m-color-warning-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-warning);
     --m-button-hover-border-color: var(--m-color-warning);
@@ -523,7 +507,6 @@
     --m-button-text-color: var(--m-color-info);
     --m-button-bg-color: var(--m-color-info-light-9);
     --m-button-border-color: var(--m-color-info-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-info);
     --m-button-hover-border-color: var(--m-color-info);
@@ -552,7 +535,6 @@
     --m-button-text-color: var(--m-color-danger);
     --m-button-bg-color: var(--m-color-danger-light-9);
     --m-button-border-color: var(--m-color-danger-light-5);
-    /* --m-button-border-color: var(--m-color-$(val)); */
     --m-button-hover-text-color: var(--m-color-white);
     --m-button-hover-bg-color: var(--m-color-danger);
     --m-button-hover-border-color: var(--m-color-danger);
