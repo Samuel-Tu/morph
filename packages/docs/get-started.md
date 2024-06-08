@@ -25,7 +25,7 @@ import App from "./App.vue";
 //引入所有组件库
 import Morph from "samuel-morph";
 //引入样式
-import "samuel-morph/dist/umd/index.css";
+import "samuel-morph/dist/index.css";
 //全局使用
 createApp(App).use(Morph).mount("#app");
 ```
@@ -40,7 +40,8 @@ createApp(App).use(Morph).mount("#app");
 ```vue
 <script>
     import { MButton } from "samuel-morph"
-    import "samuel-morph/dist/es/theme/Button.css"
+    import "samuel-morph/dist/theme/index.css"
+    import "samuel-morph/dist/theme/Button.css"
 </script>
 <template>
     <m-button> 我是 Button </m-button>
