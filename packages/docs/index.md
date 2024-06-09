@@ -8,11 +8,11 @@ hero:
   tagline: 基于 Vue3 + TS 同时兼容桌面端、移动端
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /get-started
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Components
+      link: /components/button
 
 features:
   - title: Feature A
