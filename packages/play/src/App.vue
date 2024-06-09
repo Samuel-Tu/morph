@@ -30,4 +30,5 @@
       <div>this is content c</div>
     </m-collapse-item>
   </m-collapse>
+  <m-tree />
 </template>

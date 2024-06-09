@@ -1,12 +1,12 @@
-import type { TreeNodeData, TreeOptionProps } from "./types";
-
+import type { TreeNodeData, TreeNodeOptions } from "../types";
+import TreeStore from "./nodeStore";
 let nodeIdSeed = 0;
 
 export class TreeNode {
   id: number;
   text: string | null;
   checked: boolean;
-  data: TreeNodeData | null;
+  data: TreeNodeData;
   expanded: boolean;
   parent: TreeNode | null;
   visible: boolean;
@@ -15,27 +15,23 @@ export class TreeNode {
   loaded: boolean;
   childNodes: TreeNode[];
   loading: boolean;
+  isLeaf?: boolean;
+  store: TreeStore;
   // [key: string]: any;
 
-  constructor(options: TreeOptionProps) {
+  constructor(options: TreeNodeOptions) {
     this.id = nodeIdSeed++;
     this.text = null;
     this.checked = false;
-    this.data = null;
+    this.data = options.data;
     this.expanded = false;
-    this.parent = null;
+    this.parent = options.parent ? options.parent : null;
     this.visible = true;
     this.isCurrent = false;
-
-    Object.assign(this, options);
-
-    this.level = 0;
+    this.store = options.store;
+    this.level = options.parent ? options.parent.level + 1 : 0;
     this.loaded = false;
     this.childNodes = [];
     this.loading = false;
-
-    if (this.parent) {
-      this.level = this.parent.level + 1;
-    }
   }
 }
