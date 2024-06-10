@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { ref, onBeforeMount } from "vue";
-import type {
-  TreeProps,
-  TreeOptionProps,
-  TreeNodeData,
-  LoadFunction,
-} from "./types";
+import { ref, watch } from "vue";
+import MTreeNode from "./TreeNode.vue";
+import type { TreeProps, TreeOptionProps, LoadFunction } from "./types";
+import { TreeNode } from "./model/node";
 import TreeStore from "./model/nodeStore";
 defineOptions({
   name: "MTree",
@@ -20,10 +17,16 @@ const props = withDefaults(defineProps<TreeProps>(), {
   accordion: false,
   indent: 18,
   draggable: false,
+  props: () => ({
+    children: "children",
+    label: "label",
+    disabled: "disabled",
+  }),
 });
 
 const store = ref<TreeStore>(
   new TreeStore({
+    key: props.nodeKey as string,
     data: props.data,
     lazy: props.lazy,
     load: props.load as LoadFunction,
@@ -32,16 +35,29 @@ const store = ref<TreeStore>(
   })
 );
 
-onBeforeMount(() => {
-  console.log(111);
-  store.value.initialize();
-});
+store.value.initialize();
 
-// const emits = defineEmits();
+const root = ref<TreeNode | null>(store.value.root);
+
+watch(
+  () => props.data,
+  (newVal) => {
+    console.log(newVal, 222);
+  },
+  { deep: true }
+);
 </script>
 
 <template>
-  <div class="m-tree">{{ store }}</div>
+  <div class="m-tree">
+    <span>{{ store }}</span>
+    <m-tree-node
+      v-for="child in root?.data"
+      :node="child"
+    />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@import "./style.css";
+</style>

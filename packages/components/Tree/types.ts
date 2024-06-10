@@ -14,6 +14,7 @@ export interface TreeOptionProps {
 }
 
 export declare interface TreeStoreOptions {
+  key: TreeKey;
   data: TreeData;
   lazy: boolean;
   props: TreeOptionProps;
@@ -46,3 +47,13 @@ export interface TreeNodeOptions {
   store: TreeStore;
   parent?: TreeNode;
 }
+
+export interface TreeNodeProps {
+  node: TreeNode;
+}
+
+export interface TreeStoreNodesMap {
+  [key: string]: TreeNode;
+}
+
+export type TreeKey = string | number;

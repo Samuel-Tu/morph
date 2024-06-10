@@ -1,4 +1,4 @@
-import type { TreeNodeData, TreeNodeOptions } from "../types";
+import type { TreeNodeData, TreeNodeOptions, TreeKey } from "../types";
 import TreeStore from "./nodeStore";
 let nodeIdSeed = 0;
 
@@ -26,12 +26,25 @@ export class TreeNode {
     this.data = options.data;
     this.expanded = false;
     this.parent = options.parent ? options.parent : null;
+    this.store = options.store;
     this.visible = true;
     this.isCurrent = false;
-    this.store = options.store;
     this.level = options.parent ? options.parent.level + 1 : 0;
     this.loaded = false;
     this.childNodes = [];
     this.loading = false;
+  }
+
+  initialize() {
+    const store = this.store;
+    if (!store) {
+      throw new Error("[Node]store is required!");
+    }
+  }
+
+  get key(): TreeKey {
+    const nodeKey = this.store.key;
+    if (this.data) return this.data[nodeKey];
+    return null;
   }
 }

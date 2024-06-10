@@ -1,10 +1,11 @@
-import { TreeNodeData, TreeOptionProps } from '../types';
+import { TreeNodeData, TreeNodeOptions, TreeKey } from '../types';
+import { default as TreeStore } from './nodeStore';
 
 export declare class TreeNode {
     id: number;
     text: string | null;
     checked: boolean;
-    data: TreeNodeData | null;
+    data: TreeNodeData;
     expanded: boolean;
     parent: TreeNode | null;
     visible: boolean;
@@ -14,5 +15,8 @@ export declare class TreeNode {
     childNodes: TreeNode[];
     loading: boolean;
     isLeaf?: boolean;
-    constructor(options: TreeOptionProps);
+    store: TreeStore;
+    constructor(options: TreeNodeOptions);
+    initialize(): void;
+    get key(): TreeKey;
 }

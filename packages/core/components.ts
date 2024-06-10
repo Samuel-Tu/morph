@@ -5,6 +5,7 @@ import {
   MCollapse,
   MCollapseItem,
   MTree,
+  MTreeNode,
 } from "@samuel-morph/components";
 import type { Plugin } from "vue";
 
@@ -15,4 +16,5 @@ export default [
   MCollapse,
   MCollapseItem,
   MTree,
+  MTreeNode,
 ] as Plugin[];

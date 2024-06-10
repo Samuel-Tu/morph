@@ -1,4 +1,5 @@
 import { TreeNode } from './model/node';
+import { default as TreeStore } from './model/nodeStore';
 
 export interface TreeNodeData {
     [key: string]: any;
@@ -11,6 +12,7 @@ export interface TreeOptionProps {
     isLeaf?: string | ((data: TreeNodeData, node: TreeNode) => boolean);
 }
 export declare interface TreeStoreOptions {
+    key: TreeKey;
     data: TreeData;
     lazy: boolean;
     props: TreeOptionProps;
@@ -32,3 +34,15 @@ export interface TreeProps {
     draggable: boolean;
 }
 export type LoadFunction = (rootNode: TreeNode, loadedCallback: (data: TreeNode) => void) => void;
+export interface TreeNodeOptions {
+    data: TreeNodeData;
+    store: TreeStore;
+    parent?: TreeNode;
+}
+export interface TreeNodeProps {
+    node: TreeNode;
+}
+export interface TreeStoreNodesMap {
+    [key: string]: TreeNode;
+}
+export type TreeKey = string | number;

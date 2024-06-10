@@ -1,0 +1,21 @@
+.m-tree {
+  --m-tree-node-content-height: 26px;
+  --m-tree-node-hover-bg-color: var(--m-fill-color-light);
+  --m-tree-text-color: var(--m-text-color-regular);
+}
+
+.m-tree {
+  position: relative;
+  cursor: default;
+  background-color: var(--m-fill-color-blank);
+  color: var(--m-tree-text-color);
+  font-size: var(--m-font-size-base);
+}
+
+.m-tree-node {
+  white-space: nowrap;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #bbb;
+}

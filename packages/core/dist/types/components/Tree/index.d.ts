@@ -2,6 +2,11 @@ export declare const MTree: {
     new (...args: any[]): import('vue').CreateComponentPublicInstance<Readonly<import('vue').ExtractPropTypes<{
         props: {
             type: import('vue').PropType<import('./types').TreeOptionProps>;
+            default: () => {
+                children: string;
+                label: string;
+                disabled: string;
+            };
         };
         data: {
             type: import('vue').PropType<import('./types').TreeData>;
@@ -56,6 +61,11 @@ export declare const MTree: {
     }>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & Readonly<import('vue').ExtractPropTypes<{
         props: {
             type: import('vue').PropType<import('./types').TreeOptionProps>;
+            default: () => {
+                children: string;
+                label: string;
+                disabled: string;
+            };
         };
         data: {
             type: import('vue').PropType<import('./types').TreeData>;
@@ -108,6 +118,7 @@ export declare const MTree: {
             default: boolean;
         };
     }>>, {
+        props: import('./types').TreeOptionProps;
         data: import('./types').TreeData;
         accordion: boolean;
         emptyText: string;
@@ -127,6 +138,11 @@ export declare const MTree: {
     }, Readonly<import('vue').ExtractPropTypes<{
         props: {
             type: import('vue').PropType<import('./types').TreeOptionProps>;
+            default: () => {
+                children: string;
+                label: string;
+                disabled: string;
+            };
         };
         data: {
             type: import('vue').PropType<import('./types').TreeData>;
@@ -179,6 +195,7 @@ export declare const MTree: {
             default: boolean;
         };
     }>>, {}, {}, {}, {}, {
+        props: import('./types').TreeOptionProps;
         data: import('./types').TreeData;
         accordion: boolean;
         emptyText: string;
@@ -195,6 +212,11 @@ export declare const MTree: {
 } & import('vue').ComponentOptionsBase<Readonly<import('vue').ExtractPropTypes<{
     props: {
         type: import('vue').PropType<import('./types').TreeOptionProps>;
+        default: () => {
+            children: string;
+            label: string;
+            disabled: string;
+        };
     };
     data: {
         type: import('vue').PropType<import('./types').TreeData>;
@@ -247,6 +269,7 @@ export declare const MTree: {
         default: boolean;
     };
 }>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, {
+    props: import('./types').TreeOptionProps;
     data: import('./types').TreeData;
     accordion: boolean;
     emptyText: string;
@@ -257,4 +280,37 @@ export declare const MTree: {
     indent: number;
     draggable: boolean;
 }, {}, string, {}> & (import('vue').VNodeProps & (import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & import('vue').Plugin));
+export declare const MTreeNode: {
+    new (...args: any[]): import('vue').CreateComponentPublicInstance<Readonly<import('vue').ExtractPropTypes<{
+        node: {
+            type: import('vue').PropType<import('./model/node').TreeNode>;
+            required: true;
+        };
+    }>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & Readonly<import('vue').ExtractPropTypes<{
+        node: {
+            type: import('vue').PropType<import('./model/node').TreeNode>;
+            required: true;
+        };
+    }>>, {}, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import('vue').ExtractPropTypes<{
+        node: {
+            type: import('vue').PropType<import('./model/node').TreeNode>;
+            required: true;
+        };
+    }>>, {}, {}, {}, {}, {}>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import('vue').ComponentOptionsBase<Readonly<import('vue').ExtractPropTypes<{
+    node: {
+        type: import('vue').PropType<import('./model/node').TreeNode>;
+        required: true;
+    };
+}>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, {}, {}, string, {}> & (import('vue').VNodeProps & (import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & import('vue').Plugin));
 export * from './types';
