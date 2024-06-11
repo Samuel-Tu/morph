@@ -1,59 +1,120 @@
-import { TreeNode } from "./model/node";
-import TreeStore from "./model/nodeStore";
+export class TreeNode {
+  data: string;
+  allData: TreeData;
+  childrenNodes: TreeNode[] | [];
+  parent: TreeNode | null;
+  key?: number;
+  level?: number;
+  props?: TreeOptionProps;
+
+  constructor(option: TreeNodeOption) {
+    this.data = option.data ?? "";
+    this.allData = option.allData ?? [];
+    this.level = option.level;
+    this.childrenNodes = option.children ?? [];
+    this.key = option.key;
+    this.parent = null;
+  }
+
+  initialize() {
+    for (let i = 0; i < this.allData.length; i++) {
+      const childrenNode = new TreeNode({
+        allData: this.allData[i] as TreeData,
+        data: this.props?.label,
+        level: ++level,
+        key: ++key,
+      });
+    }
+  }
+}
+
+let key = 0;
+let level = 0;
+
+export type TreeData = TreeNodeData[];
+
 export interface TreeNodeData {
   [key: string]: any;
 }
 
-export type TreeData = TreeNodeData[];
-
-export interface TreeOptionProps {
-  children?: string;
-  label?: string | ((data: TreeNodeData, node: TreeNode) => string);
-  disabled?: string | ((data: TreeNodeData, node: TreeNode) => boolean);
-  isLeaf?: string | ((data: TreeNodeData, node: TreeNode) => boolean);
+export interface TreeNodeOption {
+  data?: string;
+  allData?: TreeData;
+  children?: TreeNode[];
+  level?: number;
+  key?: number;
 }
 
-export declare interface TreeStoreOptions {
-  key: TreeKey;
+export class TreeStore {
+  root: TreeNode;
   data: TreeData;
-  lazy: boolean;
-  props: TreeOptionProps;
-  load: LoadFunction;
-  checkStrictly: boolean;
-}
-
-export interface TreeProps {
-  data?: TreeData;
   emptyText: string;
-  nodeKey?: string;
-  props?: TreeOptionProps;
-  lazy: boolean;
-  load?: LoadFunction;
+  load: LoadFunction;
   highlightCurrent: boolean;
+  defaultExpandAll: boolean;
+  checkOnClickNode: boolean;
   showCheckbox: boolean;
   checkStrictly: boolean;
   accordion: boolean;
   indent: number;
-  draggable: boolean;
+  lazy: boolean;
+
+  constructor(option: TreeStoreOption) {
+    this.data = option.data;
+    this.emptyText = option.emptyText;
+    this.load = option.load;
+    this.highlightCurrent = option.highlightCurrent;
+    this.defaultExpandAll = option.defaultExpandAll;
+    this.checkOnClickNode = option.checkOnClickNode;
+    this.showCheckbox = option.showCheckbox;
+    this.checkStrictly = option.checkStrictly;
+    this.accordion = option.accordion;
+    this.indent = option.indent;
+    this.lazy = option.lazy;
+  }
+
+  initialize() {
+    this.root = new TreeNode({
+      allData: this.data,
+    });
+    this.root.initialize();
+  }
 }
 
-export type LoadFunction = (
-  rootNode: TreeNode,
-  loadedCallback: (data: TreeNode) => void
-) => void;
+export interface TreeStoreOption {
+  data: TreeData;
+  emptyText: string;
+  load: LoadFunction;
+  highlightCurrent: boolean;
+  defaultExpandAll: boolean;
+  expandOnClickNode: boolean;
+  checkOnClickNode: boolean;
+  showCheckbox: boolean;
+  checkStrictly: boolean;
+  accordion: boolean;
+  indent: number;
+  lazy: boolean;
+}
 
-export interface TreeNodeOptions {
-  data: TreeNodeData;
-  store: TreeStore;
-  parent?: TreeNode;
+export interface TreeProps {
+  data: TreeData;
 }
 
 export interface TreeNodeProps {
   node: TreeNode;
 }
 
-export interface TreeStoreNodesMap {
-  [key: string]: TreeNode;
+export type LoadFunction = (
+  rootNode: TreeNode,
+  loadedCallback: (data: TreeData) => void
+) => void;
+
+export interface TreeNodeLoadedDefaultProps {
+  checked?: boolean;
 }
 
-export type TreeKey = string | number;
+export interface TreeOptionProps {
+  children?: string;
+  label?: string;
+  disabled?: string;
+}

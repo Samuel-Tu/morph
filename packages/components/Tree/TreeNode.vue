@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TreeNodeProps } from "./types";
+import { TreeNode, TreeNodeProps } from "./types";
 defineOptions({
   name: "MTreeNode",
 });
