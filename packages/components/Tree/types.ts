@@ -1,11 +1,14 @@
+import { error } from "console";
+
 export class TreeNode {
   data: string;
   allData: TreeData;
-  childrenNodes: TreeNode[] | [];
+  childrenNodes: TreeNode[];
   parent: TreeNode | null;
   key?: number;
   level?: number;
-  props?: TreeOptionProps;
+  props: TreeOptionProps;
+  store: TreeStore;
 
   constructor(option: TreeNodeOption) {
     this.data = option.data ?? "";
@@ -13,23 +16,46 @@ export class TreeNode {
     this.level = option.level;
     this.childrenNodes = option.children ?? [];
     this.key = option.key;
-    this.parent = null;
+    this.props = option.props;
+    this.parent = option.parent;
+    this.store = option.store;
   }
 
   initialize() {
-    for (let i = 0; i < this.allData.length; i++) {
-      const childrenNode = new TreeNode({
-        allData: this.allData[i] as TreeData,
-        data: this.props?.label,
-        level: ++level,
-        key: ++key,
+    const store = this.store;
+    if (!store) {
+      throw new Error("[Node]store is required!");
+    }
+
+    const props = store.props;
+    if (store.lazy && this.data) {
+      this.setData(this.allData);
+    }
+  }
+
+  setData(data: TreeData): void {
+    this.allData = data;
+    this.childrenNodes = [];
+
+    let children = this.allData;
+    for (let i = 0, j = children.length; i < j; i++) {
+      this.insertChild({ addData: children[i] });
+    }
+  }
+
+  insertChild(child: TreeNode) {
+    if (!(child instanceof TreeNode)) {
+      Object.assign(child, {
+        parent: this,
+        store: this.store,
       });
+      child = new TreeNode(child as TreeOptionProps);
+      if (child instanceof TreeNode) {
+        child.initialize();
+      }
     }
   }
 }
-
-let key = 0;
-let level = 0;
 
 export type TreeData = TreeNodeData[];
 
@@ -43,13 +69,16 @@ export interface TreeNodeOption {
   children?: TreeNode[];
   level?: number;
   key?: number;
+  parent: TreeNode | null;
+  props: TreeOptionProps;
+  store: TreeStore;
 }
 
 export class TreeStore {
   root: TreeNode;
   data: TreeData;
   emptyText: string;
-  load: LoadFunction;
+  load?: LoadFunction;
   highlightCurrent: boolean;
   defaultExpandAll: boolean;
   checkOnClickNode: boolean;
@@ -57,7 +86,9 @@ export class TreeStore {
   checkStrictly: boolean;
   accordion: boolean;
   indent: number;
-  lazy: boolean;
+  lazy?: boolean;
+  expandOnClickNode: boolean;
+  props: TreeOptionProps;
 
   constructor(option: TreeStoreOption) {
     this.data = option.data;
@@ -71,11 +102,16 @@ export class TreeStore {
     this.accordion = option.accordion;
     this.indent = option.indent;
     this.lazy = option.lazy;
+    this.expandOnClickNode = option.expandOnClickNode;
+    this.props = option.props;
   }
 
   initialize() {
     this.root = new TreeNode({
       allData: this.data,
+      props: this.props,
+      parent: null,
+      store: this,
     });
     this.root.initialize();
   }
@@ -84,7 +120,7 @@ export class TreeStore {
 export interface TreeStoreOption {
   data: TreeData;
   emptyText: string;
-  load: LoadFunction;
+  load?: LoadFunction;
   highlightCurrent: boolean;
   defaultExpandAll: boolean;
   expandOnClickNode: boolean;
@@ -93,7 +129,8 @@ export interface TreeStoreOption {
   checkStrictly: boolean;
   accordion: boolean;
   indent: number;
-  lazy: boolean;
+  lazy?: boolean;
+  props: TreeOptionProps;
 }
 
 export interface TreeProps {
@@ -114,7 +151,7 @@ export interface TreeNodeLoadedDefaultProps {
 }
 
 export interface TreeOptionProps {
-  children?: string;
-  label?: string;
+  children: string;
+  label: string;
   disabled?: string;
 }
