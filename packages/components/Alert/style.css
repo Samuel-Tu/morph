@@ -28,19 +28,22 @@
   .m-alert_icon {
     color: var(--m-alert-text-color);
     font-size: var(--m-alert-icon-size);
+    height: var(--m-alert-icon-size);
     width: var(--m-alert-icon-size);
     margin-right: var(--m-alert-icon-margin);
 
     &.big-icon {
       font-size: var(--m-alert-icon-large-size);
       width: var(--m-alert-icon-large-size);
+      height: var(--m-alert-icon-large-size);
       margin-right: var(--m-alert-icon-large-margin);
     }
   }
 
   .m-alert_content {
+    box-sizing: border-box;
     color: var(--m-alert-text-color);
-    vertical-align: text-top;
+    vertical-align: baseline;
 
     .m-alert_title {
       font-size: var(--m-alert-title-font-size);
@@ -60,11 +63,13 @@
       opacity: 1;
       position: absolute;
       top: 12px;
-      right: 15px;
+      right: 16px;
       cursor: pointer;
 
       :deep(.m-icon) {
-        vertical-align: top;
+        width: var(--m-alert-icon-size);
+        height: var(--m-alert-icon-size);
+        vertical-align: text-top;
       }
     }
 

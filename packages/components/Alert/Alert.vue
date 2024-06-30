@@ -38,40 +38,22 @@ defineExpose<AlertInstance>({
 
 <template>
   <transition name="m-alert-fade">
-    <div
-      class="m-alert"
-      v-show="visible"
-      :class="{
-        [`m-alert_${type}`]: type,
-        [`m-alert_${effect}`]: effect,
-        'text-center': center,
-      }"
-    >
-      <m-icon
-        v-if="showIcon"
-        class="m-alert_icon"
-        :class="{ 'big-icon': withDescription }"
-        :icon="iconName"
-      />
+    <div class="m-alert" v-show="visible" :class="{
+      [`m-alert_${type}`]: type,
+      [`m-alert_${effect}`]: effect,
+      'text_center': center,
+    }">
+      <m-icon v-if="showIcon" class="m-alert_icon" :class="{ 'big-icon': withDescription }" :icon="iconName" />
       <div class="m-alert_content">
-        <span
-          class="m-alert_title"
-          :class="{ 'with-desc': withDescription }"
-          :style="{ display: center && !showIcon ? 'flow' : 'inline' }"
-        >
+        <span class="m-alert_title" :class="{ 'with-desc': withDescription }"
+          :style="{ display: center && !showIcon ? 'flow' : 'inline' }">
           <slot name="title">{{ title }}</slot>
         </span>
         <p class="m-alert_description">
           <slot>{{ description }}</slot>
         </p>
-        <div
-          class="m-alert_close"
-          v-if="closable"
-        >
-          <m-icon
-            @click.stop="close"
-            icon="xmark"
-          />
+        <div class="m-alert_close" v-if="closable">
+          <m-icon @click.stop="close" icon="xmark" />
         </div>
       </div>
     </div>

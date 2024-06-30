@@ -4,7 +4,7 @@ import { fas as o } from "@fortawesome/free-solid-svg-icons";
 import { M as t, a } from "./Button-C__wdx0d.js";
 import { a as r } from "./Icon-DoyirucZ.js";
 import { M as s, a as e } from "./Collapse-xwu_Ig2R.js";
-import { M as m } from "./Alert-MLtkojYD.js";
+import { M as m } from "./Alert-B_xdaHVi.js";
 const i = [t, r, a, s, e, m];
 !function() {
   {

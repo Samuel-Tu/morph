@@ -124,7 +124,7 @@ demo-preview=../demo/button/Tag.vue
 | -------- | -------------- | ------------------------------------ |
 | ref      | 按钮 html 元素 | `Ref<HTMLButtonElement>`             |
 | size     | 按钮尺寸       | `ComputedRef<''\|'small' \|'large'>` |
-| type     | 按钮类型       | `ComputedRef<''\|'primary' \|...>`   |
+| type     | 按钮类型       | `ComputedRef<''\|'primary' \|'success' \|'warning' \|'danger' \|'info'>`   |
 | disabled | 按钮禁用状态   | `ComputedRef<boolean>`               |
 
 ## ButtonGroup API
