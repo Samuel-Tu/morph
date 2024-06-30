@@ -112,7 +112,7 @@ describe("Alert.vue", () => {
     });
 
     const rootNode = wrapper.find(".m-alert");
-    expect(rootNode.classes()).toContain("text-center");
+    expect(rootNode.classes()).toContain("text_center");
   });
 
   it("should not render close icon when closable is false", () => {
